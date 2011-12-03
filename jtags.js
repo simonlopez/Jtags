@@ -24,7 +24,7 @@
 					this.ed = n.get(0);
 				}			
 				else{
-					$(this.e).after('<div class="jq_tags_editor"><span class="jq_tags_tokens"></span><input type="text" class="jq_tags_editor_input" /></div>');
+					$(this.e).after('<div class="jq_tags_editor"><div class="jq_tags_tokens"></div><input type="text" class="jq_tags_editor_input" /></div>');
 					this.ed = $(this.e).next();
 				}
 	
@@ -85,7 +85,7 @@
 			refresh_list: function(){
 				var that = this;
 				
-				$(this.ed).find('span.jq_tags_tokens').html('');
+				$(this.ed).find('div.jq_tags_tokens').html('');
 				$(this.e).val(this.tags.join(this.sep + ' '));
 				
 				h = '';
@@ -94,7 +94,7 @@
 				}
 				$(that.ed).find('input').val('');
 				$(that.ed)
-					.find('span.jq_tags_tokens')
+					.find('div.jq_tags_tokens')
 						.html(h)
 						.find('div.jq_tags_token')
 							.find('a')
@@ -111,4 +111,4 @@
 		return this;
 		
 	};
-})(JQuery);
+})(jQuery);
