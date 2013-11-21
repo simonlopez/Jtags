@@ -99,7 +99,7 @@
 						.find('div.jq_tags_token')
 							.find('a')
 								.click(function(){
-									var tag_txt = $(this).parents('.jq_tags_token:first').html().replace(/<a(.*?)<\/a>/i, ''); 
+									var tag_txt = $(this).parents('.jq_tags_token:first').html().replace(/<a(.*?)<\/a>/i, '').replace(/\&amp;/g, '&'); 
 									that.remove_tag(tag_txt);
 									return false;
 								});
